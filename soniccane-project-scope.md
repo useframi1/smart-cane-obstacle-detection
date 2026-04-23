@@ -43,7 +43,7 @@ Several smart canes already exist, and we make no claim of reinventing the categ
 
 2. The **STM32L432KC microcontroller** reads all three sensors over a shared I²C bus, converts raw readings into distance zones, and drives feedback accordingly:
 
-   - **Forward obstacle → buzzer.** Beep frequency increases as the obstacle gets closer. Continuous tone at very close range.
+   - **Forward obstacle → buzzer.** Beep *rate* increases as the obstacle gets closer — slow intermittent beeps when far, fast beeps when near, continuous tone at very close range. The buzzer itself produces a single fixed pitch (~2.3 kHz); only the rate of on/off switching conveys distance.
    - **Left obstacle → left vibration motor.** Pulse rate and intensity increase with proximity.
    - **Right obstacle → right vibration motor.** Same behavior, opposite side.
 
@@ -64,7 +64,7 @@ Several smart canes already exist, and we make no claim of reinventing the categ
      SENSING                      PROCESSING                    FEEDBACK
  ┌───────────────┐           ┌───────────────────┐         ┌────────────────┐
  │ VL53L1X ToF   │           │                   │         │ Buzzer         │
- │  Forward      │◄─I²C─────►│                   ├─PWM────►│ (forward)      │
+ │  Forward      │◄─I²C─────►│                   ├─GPIO───►│ (forward)      │
  ├───────────────┤           │                   │         ├────────────────┤
  │ VL53L1X ToF   │           │  STM32L432KC      │         │ Vibration L    │
  │  Left         │◄─I²C─────►│  Cortex-M4, 80MHz ├─PWM────►│ (left haptic)  │
@@ -93,15 +93,16 @@ Several smart canes already exist, and we make no claim of reinventing the categ
 | NUCLEO-L432KC (STM32L432KCU6) | 1 | Main microcontroller. ARM Cortex-M4, 80 MHz, 256 KB Flash, 64 KB RAM. Programmed via STM32CubeIDE using HAL/LL libraries. |
 | VL53L1X ToF sensor (TOF400C breakout) | 3 | Laser-based distance measurement (forward, left, right). Range 4–400 cm, ±5 mm accuracy, 15–27° field of view. Native 3.3 V, shared I²C bus. |
 | HM-10 BLE Module | 1 | Streams distance data to companion mobile app over Bluetooth Low Energy (GATT) via UART (USART1). Native 3.3 V, iOS-compatible (BLE works with iPhones without MFi certification, unlike Classic Bluetooth SPP). |
-| Passive piezo buzzer | 1 | Audio feedback for forward obstacles. Driven by PWM through an NPN transistor. |
+| Active 5V magnetic buzzer | 1 | Audio feedback for forward obstacles. Self-oscillating at ~2.3 kHz fixed pitch; distance is conveyed by varying the on/off (beep-rate) pattern from the MCU. Driven by GPIO through an NPN transistor. |
 | Coin vibration motor | 2 | Haptic feedback for left/right obstacles. Driven by PWM through NPN transistors with flyback diodes. |
 | NPN transistor (2N2222) | 3 | Switching for buzzer and motors (GPIO cannot source enough current directly). |
 | Flyback diode (1N4001) | 2 | Back-EMF protection across each vibration motor. |
 | Momentary push button | 1 | Mode selection (buzzer / vibration / combined / off). Interrupt-driven with pull-up resistor. |
 | 18650 Li-ion cell (~3000 mAh, protected) | 1 | Main battery. ~45 g, integrated into the enclosure. |
 | TP4056 charging module | 1 | USB-C input, safe charging with over-discharge protection. |
-| MT3608 boost converter | 1 | Steps the 3.7 V cell up to a 5 V rail for the buzzer driver (louder output) and vibration motors. |
-| Slide switch | 1 | Master on/off. |
+| JST-XH 2-pin pigtail cable | 1 | Mates with the JST connector pre-wired to the 18650 cell. Allows the battery to be unplugged from the circuit for safe handling, swapping, or storage without soldering. |
+| MT3608 boost converter | 1 | Steps the 3.7 V cell up to a 5 V rail for the buzzer driver (louder output). Vibration motors are powered directly from the battery rail instead (see Section 9). |
+| Rocker switch (SPST, 2-pin) | 1 | Master on/off. Rocker style chosen over a slide switch for clearer tactile ON/OFF positions and audible click — important for a blind user operating the device by touch alone. |
 
 ---
 
@@ -111,7 +112,8 @@ Several smart canes already exist, and we make no claim of reinventing the categ
 |---|---|
 | I²C1 | Shared bus for all three VL53L1X sensors |
 | 3× GPIO (XSHUT lines) | Sequential I²C address assignment at boot — each sensor is brought out of reset one at a time and given a unique address |
-| TIM1 (advanced) | PWM output for buzzer and two vibration motors |
+| TIM1 (advanced) | PWM output for the two vibration motors |
+| GPIO (software-timed) | On/off switching for the active buzzer (beep-rate modulation) |
 | USART1 | HM-10 BLE TX/RX |
 | USART2 (VCP) | Debug serial output via ST-LINK |
 | GPIO + EXTI | Mode button (edge-triggered interrupt) |
@@ -128,7 +130,7 @@ Several smart canes already exist, and we make no claim of reinventing the categ
 | 20–50 cm | Fast beep (~10 Hz) | Strong, rapid pulse | Repeated every ~1 s |
 | < 20 cm | Continuous tone | Continuous vibration | "Stop — obstacle [direction]" |
 
-*Thresholds are initial estimates and will be tuned during user testing. The buzzer and vibration columns above describe the "combined" mode; in "buzzer only" and "vibration only" modes the corresponding column is suppressed, and in "off" mode both on-cane columns are suppressed (only the TTS column remains active, via the companion app).*
+*Thresholds are initial estimates and will be tuned during user testing. The buzzer produces a fixed ~2.3 kHz tone; the rate of the on/off pattern is what conveys distance. The buzzer and vibration columns above describe the "combined" mode; in "buzzer only" and "vibration only" modes the corresponding column is suppressed, and in "off" mode both on-cane columns are suppressed (only the TTS column remains active, via the companion app).*
 
 ---
 
@@ -139,16 +141,52 @@ The device is mounted on a cane, so the power source has to be **small, light, a
 ### Design
 
 ```
-   USB-C in
-      │
-      ▼
-  ┌─────────┐      ┌──────────┐      ┌──────────┐
-  │ TP4056  │ ───► │ 18650    │ ───► │ MT3608   │ ───► 5 V rail
-  │ charger │      │ 3.7 V    │      │ boost    │
-  └─────────┘      └──────────┘      └──────────┘
-                       │                                  3.3 V
-                       └──► STM32 onboard LDO ──────────► rail
+    USB-C in
+       │
+       ▼
+   ┌─────────┐        ┌──────────────┐
+   │ TP4056  │ ─────► │ 18650 cell   │
+   │ charger │        │ 3.7 V + BMS  │
+   └─────────┘        └──────┬───────┘
+                             │
+                             ▼
+                       ┌───────────┐
+                       │  Master   │
+                       │  rocker   │
+                       │  switch   │
+                       └─────┬─────┘
+                             │
+                Battery rail (3.0–4.2 V)
+                             │
+                ┌────────────┴────────────┐
+                │                         │
+                ▼                         ▼
+         ┌────────────┐           ┌──────────────┐
+         │  MT3608    │           │ Vibration    │
+         │  boost     │           │ motors       │
+         │  → 5 V     │           │ (via 2N2222) │
+         └──────┬─────┘           └──────────────┘
+                │
+         5 V rail
+                │
+                ├──► Buzzer driver (2N2222 → buzzer)
+                │
+                └──► Nucleo VIN
+                       │
+                  onboard LDO
+                       │
+                   3.3 V rail
+                       │
+                       ├──► 3× VL53L1X ToF sensors
+                       ├──► HM-10 BLE module
+                       └──► STM32 MCU core
 ```
+
+### Why two rails
+
+The **5 V rail** (boosted from the battery by the MT3608) feeds the buzzer driver — the higher voltage makes the buzzer noticeably louder, which matters for outdoor use over traffic and wind. The Nucleo's onboard LDO also takes 5 V in and produces the 3.3 V logic rail for the MCU and all 3.3 V peripherals (ToF sensors, HM-10).
+
+The **battery rail** (3.0–4.2 V, unboosted) powers the vibration motors directly. The coin motors available from our local suppliers are rated 1.5–3.7 V and would be overdriven on a 5 V rail, shortening their life. Running them straight from the battery keeps them within their rated range, and as a small bonus avoids the conversion losses of routing motor current through the boost converter.
 
 ### Component weights
 
@@ -157,7 +195,7 @@ The device is mounted on a cane, so the power source has to be **small, light, a
 | 18650 cell (~3000 mAh, protected) | ~45 g |
 | TP4056 charging module | ~2 g |
 | MT3608 boost converter | ~2 g |
-| Slide switch + wiring | ~3 g |
+| Rocker switch + wiring | ~3 g |
 | **Total** | **~52 g** |
 
 For comparison, a typical USB power bank is 150–250 g. **This saves roughly 150 g of weight at the grip.**
@@ -243,6 +281,7 @@ If the phone is missing, uncharged, or out of range, the on-cane buzzer and vibr
 | **Bluetooth audio latency** — TTS alerts via phone may lag behind haptic feedback. | Haptic + buzzer remain the **primary** feedback channels for time-critical warnings. TTS supplements, not replaces, them. |
 | **Component sourcing delays** — VL53L1X is ~3× the cost of HC-SR04 and less stocked. | Order from Makers Electronics / Future Electronics Egypt / Amazon.eg in Week 1. All three vendors confirmed in stock. |
 | **Mobile app scope creep** — React Native app could grow beyond the available timeline. | Define a minimum viable app early: BLE listener, distance parser, and TTS output. Additional features (settings, customization, voice tuning) are stretch goals, built only if core integration is solid. |
+| **Audio feedback expressiveness is reduced vs. a passive buzzer** — an active buzzer has a fixed pitch, so distance can only be conveyed through beep rate, not pitch. | Accepted tradeoff. We chose an active 5 V buzzer over a passive piezo because: (a) it requires only GPIO on/off toggling instead of a dedicated PWM timer channel, freeing TIM1 for exclusive motor use and simplifying firmware; (b) beep rate alone (slow / medium / fast / continuous) is sufficient to communicate four distance zones distinctly; (c) it reduces integration risk during the tight 4-week timeline. The richer spoken alerts via the companion app provide any finer-grained distance information the user needs. |
 
 ---
 
@@ -251,7 +290,7 @@ If the phone is missing, uncharged, or out of range, the on-cane buzzer and vibr
 | Member | Primary responsibility |
 |---|---|
 | **Youssef Rami** | VL53L1X driver: I²C setup, XSHUT-based address assignment, continuous ranging, distance read loop. |
-| **Nour Tamer** | Actuator drivers (PWM for buzzer + motors), distance-to-feedback mapping, mode state machine, transistor driver circuits. |
+| **Nour Tamer** | Actuator drivers (PWM for motors, GPIO beep-rate modulation for buzzer), distance-to-feedback mapping, mode state machine, transistor driver circuits. |
 | **Mariam ElGhobary** | HM-10 UART link, BLE GATT protocol, companion mobile app (React Native, iOS-first), TTS integration. |
 
 All three members share responsibility for:
