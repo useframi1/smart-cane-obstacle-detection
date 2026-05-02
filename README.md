@@ -1,6 +1,6 @@
 # SonicCane
 
-A low-cost, clip-on attachment for the standard white cane that detects obstacles at chest and head height — chairs, low signs, branches, open doors, parked-vehicle mirrors, scaffolding — and warns the user through three independent feedback channels.
+A low-cost, clip-on attachment for the standard white cane that detects obstacles at chest and head height — chairs, low signs, branches, open doors, parked-vehicle mirrors, scaffolding — and warns the user through directional vibration on the cane and spoken alerts via a paired phone.
 
 > CSCE4301 Embedded Systems · Spring 2026 · The American University in Cairo
 
@@ -16,30 +16,29 @@ Traditional white canes detect ground-level obstacles through physical contact, 
 
 ## The solution
 
-A clip-on module for the cane's upper grip, built around an STM32L432KC microcontroller and three VL53L1X laser time-of-flight sensors aimed forward, left, and right. Distance readings drive three feedback channels that the user can mix freely:
+A clip-on module for the cane's upper grip, built around an STM32L432KC microcontroller and three VL53L1X laser time-of-flight sensors aimed forward, left, and right. Distance readings drive two feedback channels:
 
-- **Buzzer** — forward obstacles. Beep rate scales with proximity (slow → fast → continuous).
-- **Vibration motors** — left and right obstacles. Pulse strength scales with proximity.
+- **Vibration motors** — three independent coin motors mounted on the grip, one per sensor direction (forward, left, right). Pulse rate scales with proximity, so the user feels both _where_ the obstacle is and _how close_.
 - **Spoken alerts** — a paired iOS app receives distance codes over BLE and speaks them ("obstacle left, 45 cm") through whatever audio device the user is already using — earbuds, bone-conduction headset, or hearing aid.
 
-A momentary push button on the grip cycles between four modes: _buzzer only_, _vibration only_, _combined_, and _off_ (BLE/TTS still active).
+A momentary push button on the grip toggles the on-cane vibration on or off. The BLE link to the phone is always available when paired, so the user can silence the cane entirely (e.g. in meetings or libraries) and still receive spoken alerts through their own audio device.
 
-The on-cane feedback works **without** the phone in any mode other than the user-selected _off_ mode.
+The on-cane feedback works **without** the phone whenever vibration is enabled.
 
 ## System architecture
 
 ```
      SENSING                      PROCESSING                    FEEDBACK
  ┌───────────────┐           ┌───────────────────┐         ┌────────────────┐
- │ VL53L1X ToF   │           │                   │         │ Buzzer         │
- │  Forward      │◄─I²C─────►│                   ├─GPIO───►│ (forward)      │
+ │ VL53L1X ToF   │           │                   │         │ Vibration F    │
+ │  Forward      │◄─I²C─────►│                   ├─PWM────►│ (fwd haptic)   │
  ├───────────────┤           │                   │         ├────────────────┤
  │ VL53L1X ToF   │           │  STM32L432KC      │         │ Vibration L    │
  │  Left         │◄─I²C─────►│  Cortex-M4, 80MHz ├─PWM────►│ (left haptic)  │
  ├───────────────┤           │                   │         ├────────────────┤
  │ VL53L1X ToF   │           │  - Sensor polling │         │ Vibration R    │
  │  Right        │◄─I²C─────►│  - Feedback map   ├─PWM────►│ (right haptic) │
- └───────────────┘           │  - Mode state m/c │         ├────────────────┤
+ └───────────────┘           │  - On/off toggle  │         ├────────────────┤
                              │  - BT streaming   │         │ HM-10 BLE      │
  ┌───────────────┐           │                   ├─UART───►│ ──► Phone app  │
  │ Mode button   ├──EXTI────►│                   │         │   └─ TTS alerts│
@@ -61,10 +60,9 @@ Full design rationale, pin assignments, and tradeoffs are in [the project scope 
 | NUCLEO-L432KC (STM32L432KCU6)                       | 1      | Cortex-M4 microcontroller, 80 MHz |
 | VL53L1X ToF sensor (TOF400C)                        | 3      | Laser distance, 4–400 cm, ±5 mm   |
 | HM-10 BLE module                                    | 1      | UART-to-BLE bridge to phone       |
-| Active 5 V buzzer                                   | 1      | Forward audio feedback            |
-| Coin vibration motor                                | 2      | Left/right haptic feedback        |
-| 2N2222 NPN transistor                               | 3      | Buzzer + motor switching          |
-| 1N4001 diode                                        | 2      | Motor flyback protection          |
+| Coin vibration motor                                | 3      | Forward / left / right haptic feedback |
+| 2N2222 NPN transistor                               | 3      | Motor switching (one per motor)   |
+| 1N4001 diode                                        | 3      | Motor flyback protection          |
 | Momentary push button                               | 1      | Mode selection                    |
 | 18650 Li-ion cell + TP4056 + MT3608 + rocker switch | 1 each | Power subsystem                   |
 
