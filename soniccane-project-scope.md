@@ -110,7 +110,7 @@ Several smart canes already exist, and we make no claim of reinventing the categ
 |---|---|
 | I²C1 | Shared bus for all three VL53L1X sensors |
 | 3× GPIO (XSHUT lines) | Sequential I²C address assignment at boot — each sensor is brought out of reset one at a time and given a unique address |
-| TIM1 / TIM2 / TIM3 channels | PWM output for the three vibration motors (forward, left, right). TIM1_CH1 is already in use; the other two channels come from TIM2/TIM3 since TIM1_CH2/CH3 conflict with the I²C pins on this package. |
+| Timer PWM (3 channels) | One independent PWM channel per vibration motor (forward, left, right). |
 | USART1 | HM-10 BLE TX/RX |
 | USART2 (VCP) | Debug serial output via ST-LINK |
 | GPIO + EXTI | Vibration on/off button (edge-triggered interrupt) |
