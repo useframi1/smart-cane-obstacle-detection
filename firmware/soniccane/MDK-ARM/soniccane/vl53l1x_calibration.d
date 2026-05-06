@@ -1,6 +1,6 @@
 soniccane\vl53l1x_calibration.o: ..\Drivers\BSP\VL53L1X\core\VL53L1X_calibration.c
 soniccane\vl53l1x_calibration.o: ..\Drivers\BSP\VL53L1X\core\VL53L1X_api.h
-soniccane\vl53l1x_calibration.o: ..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.h
+soniccane\vl53l1x_calibration.o: ../Drivers/BSP/VL53L1X/platform/vl53l1_platform.h
 soniccane\vl53l1x_calibration.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdint.h
 soniccane\vl53l1x_calibration.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h
 soniccane\vl53l1x_calibration.o: ../Core/Inc/stm32l4xx_hal_conf.h

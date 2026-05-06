@@ -38,5 +38,5 @@ soniccane\main.o: ../Core/Inc/tim.h
 soniccane\main.o: ../Core/Inc/usart.h
 soniccane\main.o: ../Core/Inc/gpio.h
 soniccane\main.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdio.h
-soniccane\main.o: ..\Drivers\BSP\VL53L1X\core\VL53L1X_api.h
-soniccane\main.o: ..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.h
+soniccane\main.o: ../Drivers/BSP/VL53L1X/core/VL53L1X_api.h
+soniccane\main.o: ../Drivers/BSP/VL53L1X/platform/vl53l1_platform.h

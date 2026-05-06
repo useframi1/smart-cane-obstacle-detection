@@ -189,12 +189,23 @@ int main(void)
 		} else {
 				for (int i = 0; i < N_CH; i++) {
 						uint8_t ready = 0;
-						VL53L1X_CheckForDataReady(ch[i].dev, &ready);
+						int8_t rc = VL53L1X_CheckForDataReady(ch[i].dev, &ready);
+						if (rc != 0) {
+								char e[20];
+								int n = snprintf(e, sizeof(e), "S%d rdy err\r\n", i);
+								HAL_UART_Transmit(&huart2, (uint8_t *)e, n, HAL_MAX_DELAY);
+								continue;
+						}
 						if (!ready) continue;
 
 						uint16_t dist = 0;
-						VL53L1X_GetDistance(ch[i].dev, &dist);
-						VL53L1X_ClearInterrupt(ch[i].dev);
+						int8_t rd  = VL53L1X_GetDistance(ch[i].dev, &dist);
+						int8_t rc2 = VL53L1X_ClearInterrupt(ch[i].dev);
+						if (rd != 0 || rc2 != 0) {
+								char e[28];
+								int n = snprintf(e, sizeof(e), "S%d io err %d/%d\r\n", i, rd, rc2);
+								HAL_UART_Transmit(&huart2, (uint8_t *)e, n, HAL_MAX_DELAY);
+						}
 						ch[i].last_dist = dist;
 
 						if (dist == 0 || dist > 2000) {
