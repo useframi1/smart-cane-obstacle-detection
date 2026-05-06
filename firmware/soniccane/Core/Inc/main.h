@@ -64,8 +64,12 @@ void Error_Handler(void);
 #define MODE_BTN_Pin GPIO_PIN_0
 #define MODE_BTN_GPIO_Port GPIOB
 #define MODE_BTN_EXTI_IRQn EXTI0_IRQn
-#define XSHUT_FWD_Pin GPIO_PIN_12
-#define XSHUT_FWD_GPIO_Port GPIOA
+#define XSHUT_R_Pin GPIO_PIN_8
+#define XSHUT_R_GPIO_Port GPIOA
+#define XSHUT_L_Pin GPIO_PIN_11
+#define XSHUT_L_GPIO_Port GPIOA
+#define XSHUT_F_Pin GPIO_PIN_12
+#define XSHUT_F_GPIO_Port GPIOA
 #define SWDIO_Pin GPIO_PIN_13
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14

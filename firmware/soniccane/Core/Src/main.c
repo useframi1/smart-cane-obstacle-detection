@@ -48,10 +48,44 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-static VL53L1_Dev_t tof = { .I2cHandle = &hi2c1, .I2cDevAddr = 0x52 };
-static uint32_t motor_pulse_period_ms = 0;   /* 0 = motor not pulsing */
-static uint32_t motor_last_flip = 0;
-static volatile uint8_t motor_enabled = 1;   /* 1 = on, 0 = off */
+#define N_CH 3
+#define IDX_FWD   0
+#define IDX_LEFT  1
+#define IDX_RIGHT 2
+
+typedef struct {
+    VL53L1_Dev_t   dev;
+    GPIO_TypeDef  *xshut_port;
+    uint16_t       xshut_pin;
+    uint32_t       pwm_channel;       /* TIM_CHANNEL_x on htim2 */
+    uint16_t       last_dist;         /* mm; 0 = out of range */
+    uint32_t       pulse_period_ms;   /* 0 = motor silent */
+    uint32_t       last_flip_ms;
+    uint8_t        toggle_state;
+} channel_t;
+
+static channel_t ch[N_CH] = {
+    [IDX_FWD] = {
+        .dev = { .I2cHandle = &hi2c1 },
+        .xshut_port = XSHUT_F_GPIO_Port, .xshut_pin = XSHUT_F_Pin,
+        .pwm_channel = TIM_CHANNEL_1,
+    },
+    [IDX_LEFT] = {
+        .dev = { .I2cHandle = &hi2c1 },
+        .xshut_port = XSHUT_L_GPIO_Port, .xshut_pin = XSHUT_L_Pin,
+        .pwm_channel = TIM_CHANNEL_2,
+    },
+    [IDX_RIGHT] = {
+        .dev = { .I2cHandle = &hi2c1 },
+        .xshut_port = XSHUT_R_GPIO_Port, .xshut_pin = XSHUT_R_Pin,
+        .pwm_channel = TIM_CHANNEL_4,
+    },
+};
+
+/* Targets must be even (HAL 8-bit format = 7-bit << 1) and unique. */
+static const uint8_t SENSOR_ADDRS[N_CH] = { 0x54, 0x56, 0x58 };
+
+static volatile uint8_t motor_enabled = 1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,23 +128,50 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
-  MX_TIM1_Init();
   MX_USART2_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-	HAL_Delay(2);   /* sensor needs ~2 ms after XSHUT goes high */
+	for (int i = 0; i < N_CH; i++) {
+			HAL_GPIO_WritePin(ch[i].xshut_port, ch[i].xshut_pin, GPIO_PIN_RESET);
+	}
+	HAL_Delay(2);
 
-	uint8_t booted = 0;
-	while (!booted) {
-			VL53L1X_BootState(tof, &booted);
+	for (int i = 0; i < N_CH; i++) {
+			HAL_GPIO_WritePin(ch[i].xshut_port, ch[i].xshut_pin, GPIO_PIN_SET);
 			HAL_Delay(2);
+
+			ch[i].dev.I2cDevAddr = 0x52;
+
+			uint8_t booted = 0;
+			uint32_t boot_start = HAL_GetTick();
+			while (!booted) {
+					VL53L1X_BootState(ch[i].dev, &booted);
+					if (HAL_GetTick() - boot_start > 100) {
+							char err[24];
+							int n = snprintf(err, sizeof(err), "S%d boot fail\r\n", i);
+							HAL_UART_Transmit(&huart2, (uint8_t *)err, n, HAL_MAX_DELAY);
+							Error_Handler();
+					}
+					HAL_Delay(2);
+			}
+
+			VL53L1X_SetI2CAddress(ch[i].dev, SENSOR_ADDRS[i]);
+			ch[i].dev.I2cDevAddr = SENSOR_ADDRS[i];
+
+			VL53L1X_SensorInit(ch[i].dev);
+			VL53L1X_SetDistanceMode(ch[i].dev, 1);
+			VL53L1X_SetTimingBudgetInMs(ch[i].dev, 50);
+			VL53L1X_SetInterMeasurementInMs(ch[i].dev, 50);
+			VL53L1X_StartRanging(ch[i].dev);
+
+			char ok[28];
+			int n = snprintf(ok, sizeof(ok), "S%d up @ 0x%02X\r\n", i, SENSOR_ADDRS[i]);
+			HAL_UART_Transmit(&huart2, (uint8_t *)ok, n, HAL_MAX_DELAY);
 	}
 
-	VL53L1X_SensorInit(tof);
-	VL53L1X_SetDistanceMode(tof, 1);            /* 1 = short, 2 = long */
-	VL53L1X_SetTimingBudgetInMs(tof, 33);
-	VL53L1X_SetInterMeasurementInMs(tof, 33);
-	VL53L1X_StartRanging(tof);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -120,52 +181,59 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		uint8_t ready = 0;
-		VL53L1X_CheckForDataReady(tof, &ready);
-
-		if (ready) {
-				uint16_t dist;
-				VL53L1X_GetDistance(tof, &dist);
-				VL53L1X_ClearInterrupt(tof);
-
-				if (!motor_enabled) {
-						/* Mode: off. Force motor silent and skip the pulse logic. */
-						motor_pulse_period_ms = 0;
-						__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
-				} else if (dist == 0 || dist > 2000) {
-						motor_pulse_period_ms = 0;
-						__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
-				} else if (dist < 200) {
-						motor_pulse_period_ms = 0;
-						__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 999);
-				} else if (dist <= 500) {
-						motor_pulse_period_ms = 50;
-				} else if (dist <= 1000) {
-						motor_pulse_period_ms = 100;
-				} else {
-						motor_pulse_period_ms = 250;
+		if (!motor_enabled) {
+				for (int i = 0; i < N_CH; i++) {
+						ch[i].pulse_period_ms = 0;
+						__HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel, 0);
 				}
+		} else {
+				for (int i = 0; i < N_CH; i++) {
+						uint8_t ready = 0;
+						VL53L1X_CheckForDataReady(ch[i].dev, &ready);
+						if (!ready) continue;
 
-				char buf[40];
-				int n;
-				if (dist == 0) {
-						n = snprintf(buf, sizeof(buf), "d=out of range  motor=%s\r\n",
-												 motor_enabled ? "on" : "off");
-				} else {
-						n = snprintf(buf, sizeof(buf), "d=%u cm  motor=%s\r\n",
-												 dist / 10, motor_enabled ? "on" : "off");
+						uint16_t dist = 0;
+						VL53L1X_GetDistance(ch[i].dev, &dist);
+						VL53L1X_ClearInterrupt(ch[i].dev);
+						ch[i].last_dist = dist;
+
+						if (dist == 0 || dist > 2000) {
+								ch[i].pulse_period_ms = 0;
+								__HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel, 0);
+						} else if (dist < 200) {
+								ch[i].pulse_period_ms = 0;
+								__HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel, 999);
+						} else if (dist <= 500) {
+								ch[i].pulse_period_ms = 50;
+						} else if (dist <= 1000) {
+								ch[i].pulse_period_ms = 100;
+						} else {
+								ch[i].pulse_period_ms = 250;
+						}
 				}
-				HAL_UART_Transmit(&huart2, (uint8_t *)buf, n, HAL_MAX_DELAY);
-
-				HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 		}
 
-		if (motor_pulse_period_ms > 0 &&
-				(HAL_GetTick() - motor_last_flip) >= motor_pulse_period_ms) {
-				static uint8_t on = 0;
-				on = !on;
-				__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, on ? 999 : 0);
-				motor_last_flip = HAL_GetTick();
+		uint32_t now = HAL_GetTick();
+		for (int i = 0; i < N_CH; i++) {
+				if (ch[i].pulse_period_ms > 0 &&
+						(now - ch[i].last_flip_ms) >= ch[i].pulse_period_ms) {
+						ch[i].toggle_state = !ch[i].toggle_state;
+						__HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel,
+																	ch[i].toggle_state ? 999 : 0);
+						ch[i].last_flip_ms = now;
+				}
+		}
+
+		static uint32_t last_print = 0;
+		if (now - last_print >= 100) {
+				last_print = now;
+				char buf[64];
+				int n = snprintf(buf, sizeof(buf),
+						"F=%4u L=%4u R=%4u motor=%s\r\n",
+						ch[IDX_FWD].last_dist, ch[IDX_LEFT].last_dist,
+						ch[IDX_RIGHT].last_dist, motor_enabled ? "on" : "off");
+				HAL_UART_Transmit(&huart2, (uint8_t *)buf, n, HAL_MAX_DELAY);
+				HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 		}
   }
   /* USER CODE END 3 */
@@ -237,9 +305,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if (GPIO_Pin == MODE_BTN_Pin) {
         static uint32_t last_press = 0;
         uint32_t now = HAL_GetTick();
-
-        /* Only accept the edge if the line is actually low (real press),
-         * and the last accepted press was at least 200 ms ago. */
         if (HAL_GPIO_ReadPin(MODE_BTN_GPIO_Port, MODE_BTN_Pin) == GPIO_PIN_RESET &&
             now - last_press > 200) {
             motor_enabled = !motor_enabled;
