@@ -64,6 +64,7 @@
 
 #include "VL53L1X_api.h"
 #include <string.h>
+#include "main.h"
 
 #if 0
 uint8_t VL51L1X_NVM_CONFIGURATION[] = {
@@ -227,8 +228,11 @@ VL53L1X_ERROR VL53L1X_SensorInit(VL53L1_Dev_t dev)
 		status = VL53L1_WrByte(&dev, Addr, VL51L1X_DEFAULT_CONFIGURATION[Addr - 0x2D]);
 	}
 	status = VL53L1X_StartRanging(dev);
+	uint32_t init_start = HAL_GetTick();
 	while(tmp==0){
 			status = VL53L1X_CheckForDataReady(dev, &tmp);
+			if (status != 0) return status;
+			if (HAL_GetTick() - init_start > 500) return -1;
 	}
 	tmp  = 0;
 	status = VL53L1X_ClearInterrupt(dev);

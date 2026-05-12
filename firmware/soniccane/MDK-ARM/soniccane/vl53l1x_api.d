@@ -35,3 +35,4 @@ soniccane\vl53l1x_api.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_e
 soniccane\vl53l1x_api.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 soniccane\vl53l1x_api.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
 soniccane\vl53l1x_api.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\string.h
+soniccane\vl53l1x_api.o: ../Core/Inc/main.h

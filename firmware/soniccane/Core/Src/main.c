@@ -70,7 +70,7 @@ static channel_t ch[N_CH] = {
         .xshut_port = XSHUT_F_GPIO_Port, .xshut_pin = XSHUT_F_Pin,
         .pwm_channel = TIM_CHANNEL_1,
     },
-    [IDX_LEFT] = {
+		[IDX_LEFT] = {
         .dev = { .I2cHandle = &hi2c1 },
         .xshut_port = XSHUT_L_GPIO_Port, .xshut_pin = XSHUT_L_Pin,
         .pwm_channel = TIM_CHANNEL_2,
@@ -86,6 +86,9 @@ static channel_t ch[N_CH] = {
 static const uint8_t SENSOR_ADDRS[N_CH] = { 0x54, 0x56, 0x58 };
 
 static volatile uint8_t motor_enabled = 1;
+
+static volatile uint32_t err_count[N_CH] = {0};
+static volatile uint32_t bus_recover_count = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -96,7 +99,109 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+static void uart_say(const char *s, int n)
+{
+    HAL_UART_Transmit(&huart2, (const uint8_t *)s, n, HAL_MAX_DELAY);
+}
 
+static void i2c_bus_recover(void)
+{
+    HAL_I2C_DeInit(&hi2c1);
+    HAL_Delay(2);
+    MX_I2C1_Init();
+    bus_recover_count++;
+}
+
+static int sensor_bringup(int i)
+{
+    char m[40];
+    int n;
+    int8_t rc;
+
+    HAL_GPIO_WritePin(ch[i].xshut_port, ch[i].xshut_pin, GPIO_PIN_SET);
+    HAL_Delay(2);
+
+    ch[i].dev.I2cDevAddr = 0x52;
+
+    uint8_t booted = 0;
+    uint32_t boot_start = HAL_GetTick();
+    while (!booted) {
+        rc = VL53L1X_BootState(ch[i].dev, &booted);
+        if (rc != 0) {
+            n = snprintf(m, sizeof(m), "S%d boot rc=%d ec=0x%lX\r\n",
+                         i, rc, hi2c1.ErrorCode);
+            uart_say(m, n);
+            return 1;
+        }
+        if (HAL_GetTick() - boot_start > 100) {
+            n = snprintf(m, sizeof(m), "S%d boot timeout\r\n", i);
+            uart_say(m, n);
+            return 2;
+        }
+        HAL_Delay(2);
+    }
+
+    rc = VL53L1X_SetI2CAddress(ch[i].dev, SENSOR_ADDRS[i]);
+    if (rc) {
+        n = snprintf(m, sizeof(m), "S%d setaddr rc=%d\r\n", i, rc);
+        uart_say(m, n);
+        return 3;
+    }
+    ch[i].dev.I2cDevAddr = SENSOR_ADDRS[i];
+
+    rc = VL53L1X_SensorInit(ch[i].dev);
+    if (rc) {
+        n = snprintf(m, sizeof(m), "S%d sensorinit rc=%d\r\n", i, rc);
+        uart_say(m, n);
+        return 4;
+    }
+
+    rc = VL53L1X_SetDistanceMode(ch[i].dev, 1);
+    if (rc) {
+        n = snprintf(m, sizeof(m), "S%d distmode rc=%d\r\n", i, rc);
+        uart_say(m, n);
+        return 5;
+    }
+
+    rc = VL53L1X_SetTimingBudgetInMs(ch[i].dev, 50);
+    if (rc) {
+        n = snprintf(m, sizeof(m), "S%d tb rc=%d\r\n", i, rc);
+        uart_say(m, n);
+        return 6;
+    }
+
+    rc = VL53L1X_SetInterMeasurementInMs(ch[i].dev, 50);
+    if (rc) {
+        n = snprintf(m, sizeof(m), "S%d imp rc=%d\r\n", i, rc);
+        uart_say(m, n);
+        return 7;
+    }
+
+    rc = VL53L1X_StartRanging(ch[i].dev);
+    if (rc) {
+        n = snprintf(m, sizeof(m), "S%d start rc=%d\r\n", i, rc);
+        uart_say(m, n);
+        return 8;
+    }
+
+    uint32_t check_start = HAL_GetTick();
+    uint8_t ready = 0;
+    while (HAL_GetTick() - check_start < 200) {
+        rc = VL53L1X_CheckForDataReady(ch[i].dev, &ready);
+        if (rc == 0 && ready) break;
+        HAL_Delay(5);
+    }
+    if (!ready) {
+        n = snprintf(m, sizeof(m), "S%d no data after init\r\n", i);
+        uart_say(m, n);
+        return 9;
+    }
+    VL53L1X_ClearInterrupt(ch[i].dev);
+
+    n = snprintf(m, sizeof(m), "S%d ok @ 0x%02X\r\n", i, SENSOR_ADDRS[i]);
+    uart_say(m, n);
+    return 0;
+}
 /* USER CODE END 0 */
 
 /**
@@ -134,39 +239,21 @@ int main(void)
 	for (int i = 0; i < N_CH; i++) {
 			HAL_GPIO_WritePin(ch[i].xshut_port, ch[i].xshut_pin, GPIO_PIN_RESET);
 	}
-	HAL_Delay(2);
+	HAL_Delay(10);
 
 	for (int i = 0; i < N_CH; i++) {
-			HAL_GPIO_WritePin(ch[i].xshut_port, ch[i].xshut_pin, GPIO_PIN_SET);
-			HAL_Delay(2);
-
-			ch[i].dev.I2cDevAddr = 0x52;
-
-			uint8_t booted = 0;
-			uint32_t boot_start = HAL_GetTick();
-			while (!booted) {
-					VL53L1X_BootState(ch[i].dev, &booted);
-					if (HAL_GetTick() - boot_start > 100) {
-							char err[24];
-							int n = snprintf(err, sizeof(err), "S%d boot fail\r\n", i);
-							HAL_UART_Transmit(&huart2, (uint8_t *)err, n, HAL_MAX_DELAY);
-							Error_Handler();
+			int attempts = 0;
+			while (sensor_bringup(i) != 0) {
+					if (++attempts >= 3) {
+							char m[24];
+							int n = snprintf(m, sizeof(m), "S%d FAIL\r\n", i);
+							uart_say(m, n);
+							break;
 					}
-					HAL_Delay(2);
+					i2c_bus_recover();
+					HAL_GPIO_WritePin(ch[i].xshut_port, ch[i].xshut_pin, GPIO_PIN_RESET);
+					HAL_Delay(5);
 			}
-
-			VL53L1X_SetI2CAddress(ch[i].dev, SENSOR_ADDRS[i]);
-			ch[i].dev.I2cDevAddr = SENSOR_ADDRS[i];
-
-			VL53L1X_SensorInit(ch[i].dev);
-			VL53L1X_SetDistanceMode(ch[i].dev, 1);
-			VL53L1X_SetTimingBudgetInMs(ch[i].dev, 50);
-			VL53L1X_SetInterMeasurementInMs(ch[i].dev, 50);
-			VL53L1X_StartRanging(ch[i].dev);
-
-			char ok[28];
-			int n = snprintf(ok, sizeof(ok), "S%d up @ 0x%02X\r\n", i, SENSOR_ADDRS[i]);
-			HAL_UART_Transmit(&huart2, (uint8_t *)ok, n, HAL_MAX_DELAY);
 	}
 
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -189,27 +276,37 @@ int main(void)
 		} else {
 				for (int i = 0; i < N_CH; i++) {
 						uint8_t ready = 0;
-						VL53L1X_CheckForDataReady(ch[i].dev, &ready);
+						int8_t rc = VL53L1X_CheckForDataReady(ch[i].dev, &ready);
+						if (rc != 0) {
+								err_count[i]++;
+								i2c_bus_recover();
+								continue;
+						}
 						if (!ready) continue;
 
 						uint16_t dist = 0;
-						VL53L1X_GetDistance(ch[i].dev, &dist);
+						rc = VL53L1X_GetDistance(ch[i].dev, &dist);
+						if (rc != 0) {
+								err_count[i]++;
+								i2c_bus_recover();
+								continue;
+						}
 						VL53L1X_ClearInterrupt(ch[i].dev);
 						ch[i].last_dist = dist;
-
+						
 						if (dist == 0 || dist > 2000) {
-								ch[i].pulse_period_ms = 0;
-								__HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel, 0);
-						} else if (dist < 200) {
-								ch[i].pulse_period_ms = 0;
-								__HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel, 999);
-						} else if (dist <= 500) {
-								ch[i].pulse_period_ms = 50;
-						} else if (dist <= 1000) {
-								ch[i].pulse_period_ms = 100;
-						} else {
-								ch[i].pulse_period_ms = 250;
-						}
+                ch[i].pulse_period_ms = 0;
+                __HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel, 0);
+            } else if (dist < 200) {
+                ch[i].pulse_period_ms = 0;
+                __HAL_TIM_SET_COMPARE(&htim2, ch[i].pwm_channel, 999);
+            } else if (dist <= 500) {
+                ch[i].pulse_period_ms = 50;
+            } else if (dist <= 1000) {
+                ch[i].pulse_period_ms = 100;
+            } else {
+                ch[i].pulse_period_ms = 250;
+            }
 				}
 		}
 
@@ -227,11 +324,14 @@ int main(void)
 		static uint32_t last_print = 0;
 		if (now - last_print >= 100) {
 				last_print = now;
-				char buf[64];
+				char buf[112];
 				int n = snprintf(buf, sizeof(buf),
-						"F=%4u L=%4u R=%4u motor=%s\r\n",
+						"F=%4u L=%4u R=%4u m=%s e=%lu/%lu/%lu r=%lu st=0x%02lX ec=0x%lX\r\n",
 						ch[IDX_FWD].last_dist, ch[IDX_LEFT].last_dist,
-						ch[IDX_RIGHT].last_dist, motor_enabled ? "on" : "off");
+						ch[IDX_RIGHT].last_dist, motor_enabled ? "on" : "off",
+						(unsigned long)err_count[0], (unsigned long)err_count[1],
+						(unsigned long)err_count[2], (unsigned long)bus_recover_count,
+						(unsigned long)hi2c1.State, (unsigned long)hi2c1.ErrorCode);
 				HAL_UART_Transmit(&huart2, (uint8_t *)buf, n, HAL_MAX_DELAY);
 				HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 		}

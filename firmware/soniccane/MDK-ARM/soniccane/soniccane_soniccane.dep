@@ -1,7 +1,7 @@
 Dependencies for Project 'soniccane', Target 'soniccane': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32l432xx.s)(0x69FB6409)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32L432xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32l432xx.lst --xref -o soniccane\startup_stm32l432xx.o --depend soniccane\startup_stm32l432xx.d)
-F (../Core/Src/main.c)(0x69FB8080)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\main.o --omf_browse soniccane\main.crf --depend soniccane\main.d)
+F (../Core/Src/main.c)(0x6A0370B0)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\main.o --omf_browse soniccane\main.crf --depend soniccane\main.d)
 I (../Core/Inc/main.h)(0x69FB6405)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
@@ -77,7 +77,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Core/Src/i2c.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\i2c.o --omf_browse soniccane\i2c.crf --depend soniccane\i2c.d)
+F (../Core/Src/i2c.c)(0x6A035F49)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\i2c.o --omf_browse soniccane\i2c.crf --depend soniccane\i2c.d)
 I (../Core/Inc/i2c.h)(0x69FB1095)
 I (../Core/Inc/main.h)(0x69FB6405)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
@@ -911,9 +911,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1x_api.o --omf_browse soniccane\vl53l1x_api.crf --depend soniccane\vl53l1x_api.d)
+F (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.c)(0x6A036F79)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1x_api.o --omf_browse soniccane\vl53l1x_api.crf --depend soniccane\vl53l1x_api.d)
 I (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.h)(0x69FB1095)
-I (..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.h)(0x69FB1095)
+I (../Drivers/BSP/VL53L1X/platform/vl53l1_platform.h)(0x69FB1095)
 I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
@@ -947,6 +947,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
 I (C:\Users\Public\Documents\ARM\ARMCC\include\string.h)(0x602577DE)
+I (../Core/Inc/main.h)(0x69FB6405)
 F (..\Drivers\BSP\VL53L1X\core\VL53L1X_calibration.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1x_calibration.o --omf_browse soniccane\vl53l1x_calibration.crf --depend soniccane\vl53l1x_calibration.d)
 I (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.h)(0x69FB1095)
 I (..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.h)(0x69FB1095)
