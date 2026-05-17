@@ -1,0 +1,14 @@
+soniccane\ipc.o: ..\Core\Src\ipc.c
+soniccane\ipc.o: ../Core/Inc/ipc.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+soniccane\ipc.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stddef.h
+soniccane\ipc.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+soniccane\ipc.o: ../Core/Inc/FreeRTOSConfig.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+soniccane\ipc.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

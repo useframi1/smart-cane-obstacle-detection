@@ -601,10 +601,10 @@ ARM Macro Assembler    Page 10
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=soniccane\startup_stm32l432xx.d -osoniccane\startup_stm32l43
-2xx.o -I.\RTE\_soniccane -IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core
-\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 536" -
--predefine="_RTE_ SETA 1" --predefine="STM32L432xx SETA 1" --predefine="_RTE_ S
-ETA 1" --list=startup_stm32l432xx.lst startup_stm32l432xx.s
+2xx.o -I../Core/Inc -I.\RTE\_soniccane -IC:\Users\Public\Downloads\ARM\CMSIS\5.
+8.0\CMSIS\Core\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSI
+ON SETA 536" --predefine="_RTE_ SETA 1" --predefine="STM32L432xx SETA 1" --pred
+efine="_RTE_ SETA 1" --list=startup_stm32l432xx.lst startup_stm32l432xx.s
 
 
 

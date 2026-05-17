@@ -1,0 +1,14 @@
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+soniccane\stream_buffer.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+soniccane\stream_buffer.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\string.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+soniccane\stream_buffer.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stddef.h
+soniccane\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+soniccane\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h

@@ -1,10 +1,10 @@
 Dependencies for Project 'soniccane', Target 'soniccane': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (startup_stm32l432xx.s)(0x69FB6409)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32L432xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32l432xx.lst --xref -o soniccane\startup_stm32l432xx.o --depend soniccane\startup_stm32l432xx.d)
-F (../Core/Src/main.c)(0x6A0370B0)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\main.o --omf_browse soniccane\main.crf --depend soniccane\main.d)
-I (../Core/Inc/main.h)(0x69FB6405)
+F (startup_stm32l432xx.s)(0x6A09E757)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I ../Core/Inc-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32L432xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32l432xx.lst --xref -o soniccane\startup_stm32l432xx.o --depend soniccane\startup_stm32l432xx.d)
+F (../Core/Src/main.c)(0x6A09E88E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\main.o --omf_browse soniccane\main.crf --depend soniccane\main.d)
+I (../Core/Inc/main.h)(0x6A09B5AB)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -35,18 +35,69 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-I (../Core/Inc/i2c.h)(0x69FB1095)
-I (../Core/Inc/tim.h)(0x69FB6404)
-I (../Core/Inc/usart.h)(0x69FB1095)
-I (../Core/Inc/gpio.h)(0x69FB1095)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69B8FEEC)
 I (C:\Users\Public\Documents\ARM\ARMCC\include\stdio.h)(0x602577D4)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69B8FEEC)
 I (../Drivers/BSP/VL53L1X/core/VL53L1X_api.h)(0x69FB1095)
 I (../Drivers/BSP/VL53L1X/platform/vl53l1_platform.h)(0x69FB1095)
-F (../Core/Src/gpio.c)(0x69FB6403)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\gpio.o --omf_browse soniccane\gpio.crf --depend soniccane\gpio.d)
-I (../Core/Inc/gpio.h)(0x69FB1095)
-I (../Core/Inc/main.h)(0x69FB6405)
+F (../Core/Src/freertos.c)(0x6A09B5AB)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\freertos.o --omf_browse soniccane\freertos.crf --depend soniccane\freertos.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Core/Inc/main.h)(0x6A09B5AB)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l432xx.h)(0x69B8FFAE)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
+F (../Core/Src/stm32l4xx_it.c)(0x6A087AE6)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_it.o --omf_browse soniccane\stm32l4xx_it.crf --depend soniccane\stm32l4xx_it.d)
+I (../Core/Inc/main.h)(0x6A09B5AB)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -77,11 +128,11 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Core/Src/i2c.c)(0x6A035F49)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\i2c.o --omf_browse soniccane\i2c.crf --depend soniccane\i2c.d)
-I (../Core/Inc/i2c.h)(0x69FB1095)
-I (../Core/Inc/main.h)(0x69FB6405)
+I (../Core/Inc/stm32l4xx_it.h)(0x6A087AE6)
+F (../Core/Src/stm32l4xx_hal_msp.c)(0x6A09D01E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_msp.o --omf_browse soniccane\stm32l4xx_hal_msp.crf --depend soniccane\stm32l4xx_hal_msp.d)
+I (../Core/Inc/main.h)(0x6A09B5AB)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -112,11 +163,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Core/Src/tim.c)(0x69FB6404)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\tim.o --omf_browse soniccane\tim.crf --depend soniccane\tim.d)
-I (../Core/Inc/tim.h)(0x69FB6404)
-I (../Core/Inc/main.h)(0x69FB6405)
+F (../Core/Src/stm32l4xx_hal_timebase_tim.c)(0x6A087AE6)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_timebase_tim.o --omf_browse soniccane\stm32l4xx_hal_timebase_tim.crf --depend soniccane\stm32l4xx_hal_timebase_tim.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -147,11 +196,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Core/Src/usart.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\usart.o --omf_browse soniccane\usart.crf --depend soniccane\usart.d)
-I (../Core/Inc/usart.h)(0x69FB1095)
-I (../Core/Inc/main.h)(0x69FB6405)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal.o --omf_browse soniccane\stm32l4xx_hal.crf --depend soniccane\stm32l4xx_hal.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -182,10 +229,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Core/Src/stm32l4xx_it.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_it.o --omf_browse soniccane\stm32l4xx_it.crf --depend soniccane\stm32l4xx_it.d)
-I (../Core/Inc/main.h)(0x69FB6405)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_rcc.o --omf_browse soniccane\stm32l4xx_hal_rcc.crf --depend soniccane\stm32l4xx_hal_rcc.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -216,11 +262,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_it.h)(0x69FB1095)
-F (../Core/Src/stm32l4xx_hal_msp.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_msp.o --omf_browse soniccane\stm32l4xx_hal_msp.crf --depend soniccane\stm32l4xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x69FB6405)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_rcc_ex.o --omf_browse soniccane\stm32l4xx_hal_rcc_ex.crf --depend soniccane\stm32l4xx_hal_rcc_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -251,9 +295,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_i2c.o --omf_browse soniccane\stm32l4xx_hal_i2c.crf --depend soniccane\stm32l4xx_hal_i2c.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_flash.o --omf_browse soniccane\stm32l4xx_hal_flash.crf --depend soniccane\stm32l4xx_hal_flash.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -284,9 +328,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_i2c_ex.o --omf_browse soniccane\stm32l4xx_hal_i2c_ex.crf --depend soniccane\stm32l4xx_hal_i2c_ex.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_flash_ex.o --omf_browse soniccane\stm32l4xx_hal_flash_ex.crf --depend soniccane\stm32l4xx_hal_flash_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -317,9 +361,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal.o --omf_browse soniccane\stm32l4xx_hal.crf --depend soniccane\stm32l4xx_hal.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_flash_ramfunc.o --omf_browse soniccane\stm32l4xx_hal_flash_ramfunc.crf --depend soniccane\stm32l4xx_hal_flash_ramfunc.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -350,9 +394,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_rcc.o --omf_browse soniccane\stm32l4xx_hal_rcc.crf --depend soniccane\stm32l4xx_hal_rcc.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_gpio.o --omf_browse soniccane\stm32l4xx_hal_gpio.crf --depend soniccane\stm32l4xx_hal_gpio.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -383,9 +427,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_rcc_ex.o --omf_browse soniccane\stm32l4xx_hal_rcc_ex.crf --depend soniccane\stm32l4xx_hal_rcc_ex.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_dma.o --omf_browse soniccane\stm32l4xx_hal_dma.crf --depend soniccane\stm32l4xx_hal_dma.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -416,9 +460,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_flash.o --omf_browse soniccane\stm32l4xx_hal_flash.crf --depend soniccane\stm32l4xx_hal_flash.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_dma_ex.o --omf_browse soniccane\stm32l4xx_hal_dma_ex.crf --depend soniccane\stm32l4xx_hal_dma_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -449,9 +493,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_flash_ex.o --omf_browse soniccane\stm32l4xx_hal_flash_ex.crf --depend soniccane\stm32l4xx_hal_flash_ex.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_pwr.o --omf_browse soniccane\stm32l4xx_hal_pwr.crf --depend soniccane\stm32l4xx_hal_pwr.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -482,9 +526,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_flash_ramfunc.o --omf_browse soniccane\stm32l4xx_hal_flash_ramfunc.crf --depend soniccane\stm32l4xx_hal_flash_ramfunc.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_pwr_ex.o --omf_browse soniccane\stm32l4xx_hal_pwr_ex.crf --depend soniccane\stm32l4xx_hal_pwr_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -515,9 +559,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_gpio.o --omf_browse soniccane\stm32l4xx_hal_gpio.crf --depend soniccane\stm32l4xx_hal_gpio.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_cortex.o --omf_browse soniccane\stm32l4xx_hal_cortex.crf --depend soniccane\stm32l4xx_hal_cortex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -548,9 +592,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_dma.o --omf_browse soniccane\stm32l4xx_hal_dma.crf --depend soniccane\stm32l4xx_hal_dma.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_exti.o --omf_browse soniccane\stm32l4xx_hal_exti.crf --depend soniccane\stm32l4xx_hal_exti.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -581,9 +625,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_dma_ex.o --omf_browse soniccane\stm32l4xx_hal_dma_ex.crf --depend soniccane\stm32l4xx_hal_dma_ex.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_i2c.o --omf_browse soniccane\stm32l4xx_hal_i2c.crf --depend soniccane\stm32l4xx_hal_i2c.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -614,9 +658,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_pwr.o --omf_browse soniccane\stm32l4xx_hal_pwr.crf --depend soniccane\stm32l4xx_hal_pwr.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_i2c_ex.o --omf_browse soniccane\stm32l4xx_hal_i2c_ex.crf --depend soniccane\stm32l4xx_hal_i2c_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -647,9 +691,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_pwr_ex.o --omf_browse soniccane\stm32l4xx_hal_pwr_ex.crf --depend soniccane\stm32l4xx_hal_pwr_ex.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_tim.o --omf_browse soniccane\stm32l4xx_hal_tim.crf --depend soniccane\stm32l4xx_hal_tim.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -680,9 +724,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_cortex.o --omf_browse soniccane\stm32l4xx_hal_cortex.crf --depend soniccane\stm32l4xx_hal_cortex.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_tim_ex.o --omf_browse soniccane\stm32l4xx_hal_tim_ex.crf --depend soniccane\stm32l4xx_hal_tim_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -713,9 +757,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_exti.o --omf_browse soniccane\stm32l4xx_hal_exti.crf --depend soniccane\stm32l4xx_hal_exti.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_uart.o --omf_browse soniccane\stm32l4xx_hal_uart.crf --depend soniccane\stm32l4xx_hal_uart.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -746,9 +790,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_tim.o --omf_browse soniccane\stm32l4xx_hal_tim.crf --depend soniccane\stm32l4xx_hal_tim.d)
+F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_uart_ex.o --omf_browse soniccane\stm32l4xx_hal_uart_ex.crf --depend soniccane\stm32l4xx_hal_uart_ex.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -779,106 +823,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_tim_ex.o --omf_browse soniccane\stm32l4xx_hal_tim_ex.crf --depend soniccane\stm32l4xx_hal_tim_ex.d)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l432xx.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69B8FEEA)
-I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69B8FFAE)
-I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_uart.o --omf_browse soniccane\stm32l4xx_hal_uart.crf --depend soniccane\stm32l4xx_hal_uart.d)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l432xx.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69B8FEEA)
-I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69B8FFAE)
-I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c)(0x69B8FFAE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stm32l4xx_hal_uart_ex.o --omf_browse soniccane\stm32l4xx_hal_uart_ex.crf --depend soniccane\stm32l4xx_hal_uart_ex.d)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l432xx.h)(0x69B8FFAE)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69B8FEEA)
-I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69B8FEEA)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69B8FFAE)
-I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (../Core/Src/system_stm32l4xx.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\system_stm32l4xx.o --omf_browse soniccane\system_stm32l4xx.crf --depend soniccane\system_stm32l4xx.d)
+F (../Core/Src/system_stm32l4xx.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\system_stm32l4xx.o --omf_browse soniccane\system_stm32l4xx.crf --depend soniccane\system_stm32l4xx.d)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l432xx.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x69B8FEEA)
@@ -889,7 +834,7 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69B8FEEA)
 I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69B8FEEA)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69B8FFAE)
@@ -911,12 +856,12 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
-F (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.c)(0x6A036F79)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1x_api.o --omf_browse soniccane\vl53l1x_api.crf --depend soniccane\vl53l1x_api.d)
+F (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.c)(0x6A036F79)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1x_api.o --omf_browse soniccane\vl53l1x_api.crf --depend soniccane\vl53l1x_api.d)
 I (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.h)(0x69FB1095)
 I (../Drivers/BSP/VL53L1X/platform/vl53l1_platform.h)(0x69FB1095)
 I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -947,13 +892,13 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
 I (C:\Users\Public\Documents\ARM\ARMCC\include\string.h)(0x602577DE)
-I (../Core/Inc/main.h)(0x69FB6405)
-F (..\Drivers\BSP\VL53L1X\core\VL53L1X_calibration.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1x_calibration.o --omf_browse soniccane\vl53l1x_calibration.crf --depend soniccane\vl53l1x_calibration.d)
+I (../Core/Inc/main.h)(0x6A09B5AB)
+F (..\Drivers\BSP\VL53L1X\core\VL53L1X_calibration.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1x_calibration.o --omf_browse soniccane\vl53l1x_calibration.crf --depend soniccane\vl53l1x_calibration.d)
 I (..\Drivers\BSP\VL53L1X\core\VL53L1X_api.h)(0x69FB1095)
-I (..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.h)(0x69FB1095)
+I (../Drivers/BSP/VL53L1X/platform/vl53l1_platform.h)(0x69FB1095)
 I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -984,11 +929,11 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
 I (..\Drivers\BSP\VL53L1X\core\VL53L1X_calibration.h)(0x69FB1095)
-F (..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1_platform.o --omf_browse soniccane\vl53l1_platform.crf --depend soniccane\vl53l1_platform.d)
+F (..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.c)(0x69FB1095)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\vl53l1_platform.o --omf_browse soniccane\vl53l1_platform.crf --depend soniccane\vl53l1_platform.d)
 I (..\Drivers\BSP\VL53L1X\platform\vl53l1_platform.h)(0x69FB1095)
 I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x69FB1095)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
@@ -1018,3 +963,178 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
+F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\croutine.o --omf_browse soniccane\croutine.crf --depend soniccane\croutine.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\event_groups.o --omf_browse soniccane\event_groups.crf --depend soniccane\event_groups.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdlib.h)(0x602577D4)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\list.o --omf_browse soniccane\list.crf --depend soniccane\list.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdlib.h)(0x602577D4)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\queue.o --omf_browse soniccane\queue.crf --depend soniccane\queue.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdlib.h)(0x602577D4)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\string.h)(0x602577DE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\stream_buffer.o --omf_browse soniccane\stream_buffer.crf --depend soniccane\stream_buffer.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\string.h)(0x602577DE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\tasks.o --omf_browse soniccane\tasks.crf --depend soniccane\tasks.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdlib.h)(0x602577D4)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\string.h)(0x602577DE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\timers.o --omf_browse soniccane\timers.crf --depend soniccane\timers.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdlib.h)(0x602577D4)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\cmsis_os2.o --omf_browse soniccane\cmsis_os2.crf --depend soniccane\cmsis_os2.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\string.h)(0x602577DE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69B8FEEA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h)(0x69B8FEEC)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x69B8FFAE)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l432xx.h)(0x69B8FFAE)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69B8FEEA)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x69B8FFAE)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x6A087AE6)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x69B8FFAE)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x69B8FFAE)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\heap_4.o --omf_browse soniccane\heap_4.crf --depend soniccane\heap_4.d)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdlib.h)(0x602577D4)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c)(0x69B8FEEC)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/VL53L1X/core -I ../Drivers/BSP/VL53L1X/platform -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2-I.\RTE\_soniccane-IC:\Users\Public\Downloads\ARM\CMSIS\5.8.0\CMSIS\Core\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32L432xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L432xx-o soniccane\port.o --omf_browse soniccane\port.crf --depend soniccane\port.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69B8FEEC)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stddef.h)(0x602577DE)
+I (C:\Users\Public\Documents\ARM\ARMCC\include\stdint.h)(0x602577DE)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6A09E6C3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69B8FEEC)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69B8FEEC)

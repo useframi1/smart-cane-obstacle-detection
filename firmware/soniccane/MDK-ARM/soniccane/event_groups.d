@@ -1,0 +1,15 @@
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
+soniccane\event_groups.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdlib.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+soniccane\event_groups.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stddef.h
+soniccane\event_groups.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+soniccane\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+soniccane\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

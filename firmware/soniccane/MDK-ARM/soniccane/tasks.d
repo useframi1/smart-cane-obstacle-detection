@@ -1,0 +1,16 @@
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
+soniccane\tasks.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdlib.h
+soniccane\tasks.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\string.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+soniccane\tasks.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stddef.h
+soniccane\tasks.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+soniccane\tasks.o: ../Core/Inc/FreeRTOSConfig.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+soniccane\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h

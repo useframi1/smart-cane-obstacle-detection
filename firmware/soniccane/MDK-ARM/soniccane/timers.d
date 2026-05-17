@@ -1,0 +1,15 @@
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
+soniccane\timers.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdlib.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+soniccane\timers.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stddef.h
+soniccane\timers.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+soniccane\timers.o: ../Core/Inc/FreeRTOSConfig.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+soniccane\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h

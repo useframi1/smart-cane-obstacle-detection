@@ -1,0 +1,14 @@
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/croutine.c
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+soniccane\croutine.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stddef.h
+soniccane\croutine.o: C:\Users\Public\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+soniccane\croutine.o: ../Core/Inc/FreeRTOSConfig.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h
+soniccane\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
