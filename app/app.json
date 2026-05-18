@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "SonicCane",
+    "slug": "soniccane",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "edu.aucegypt.csce4301.soniccane",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "bluetooth-central",
+          "audio"
+        ],
+        "NSLocalNetworkUsageDescription": "SonicCane uses the local network to connect to the Metro development server during development.",
+        "NSBonjourServices": [
+          "_expo-development-server._tcp"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ],
+      "package": "edu.aucegypt.csce4301.soniccane"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": true,
+          "modes": [
+            "central"
+          ],
+          "bluetoothAlwaysPermission": "SonicCane connects to your cane to announce obstacles."
+        }
+      ],
+      "expo-font"
+    ]
+  }
+}
