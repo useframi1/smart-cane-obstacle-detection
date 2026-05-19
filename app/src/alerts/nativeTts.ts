@@ -9,17 +9,18 @@ const AV_MIN_OPEN = 0.05;
 const AV_MAX_OPEN = 0.95;
 const clampRate = (r: number) => Math.max(AV_MIN_OPEN, Math.min(AV_MAX_OPEN, r));
 
-// react-native-tts methods that take an optional ObjC `BOOL *` parameter
-// (`stop`, `pause`, `setDefaultRate`, `setDucking`) can't be marshalled by
-// the New-Arch JSI bridge — a JS boolean can't be coerced into a BOOL
-// pointer. Calls throw or silently reject. We bypass these methods entirely
-// and use per-utterance options on `Tts.speak`, which uses NSDictionary and
-// marshals cleanly.
+// `Tts.stop` is patched via patches/react-native-tts+4.1.1.patch — the
+// upstream signature is `stop:(BOOL *)onWordBoundary`, a pointer-to-BOOL the
+// New-Arch JSI bridge can't marshal a JS boolean into. The patch drops the
+// pointer so the call goes through and AVSpeechSynthesizer's queue actually
+// clears. `setDefaultRate` and `setDucking` have the same BOOL* bug but we
+// don't depend on them — per-utterance rate goes through `Tts.speak`'s
+// NSDictionary options instead.
 const stopSilently = () => {
   try {
     void Tts.stop(false);
   } catch {
-    // No-op — broken under New Arch, expected.
+    // Defensive — swallow transient teardown errors.
   }
 };
 
@@ -46,11 +47,14 @@ export function createNativeTts(): TtsAdapter {
 
   return {
     speak(req: SpeakRequest) {
-      stopSilently();
-      // Tts.speak's `Options` d.ts requires all three keys, but the iOS
-      // native impl reads them by key via `valueForKey` and treats absent
-      // keys as nil — so a partial dictionary is correct at runtime. Cast
-      // through Partial to satisfy the (overly strict) types.
+      // Do not stop before speaking — iOS AVSpeechSynthesizer queues
+      // utterances natively, which is what lets parallel-direction alerts
+      // (F/L/R changing at the same scan) all be spoken in sequence. The
+      // queue is only cleared by an explicit `cancel('*')` from mute or
+      // disconnect. Tts.speak's `Options` d.ts requires all three keys,
+      // but the iOS native impl reads them by key via `valueForKey` and
+      // treats absent keys as nil — so a partial dictionary is correct at
+      // runtime. Cast through Partial to satisfy the (overly strict) types.
       const options: Partial<Exclude<Options, string>> = {};
       if (req.rate !== undefined) options.rate = clampRate(req.rate);
       if (req.voiceId) options.iosVoiceId = req.voiceId;

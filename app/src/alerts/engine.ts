@@ -42,22 +42,13 @@ export function createAlertEngine(
     if (zone === 'OFF') {
       const prev = lastZone[dir];
       if (prev && prev !== 'OFF') {
-        tts.cancel(dir);
         delete lastSpoken[`${dir}:${prev}` as const];
       }
       lastZone[dir] = 'OFF';
       return null;
     }
 
-    const prevZone = lastZone[dir];
     const newPriority = ZONE_PRIORITY[zone];
-
-    if (prevZone && prevZone !== 'OFF' && prevZone !== zone) {
-      const prevPriority = ZONE_PRIORITY[prevZone];
-      if (newPriority > prevPriority) {
-        tts.cancel(dir);
-      }
-    }
 
     const key = `${dir}:${zone}` as const;
     const last = lastSpoken[key] ?? -Infinity;

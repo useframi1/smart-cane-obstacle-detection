@@ -57,37 +57,37 @@ describe('AlertEngine', () => {
     expect(tts.spoken).toHaveLength(2);
   });
 
-  it('NEAR preempts an in-flight CLOSE on the same direction', () => {
+  it('higher-priority same-direction events queue rather than preempt', () => {
     const tts = new FakeTts();
     const engine = createAlertEngine(defaultCfg(), tts, phrases);
     engine.ingest(ev('F', 'CLOSE', 400), 0);
     engine.ingest(ev('F', 'NEAR', 150), 200);
-    expect(tts.cancelled).toContain('F');
+    expect(tts.cancelled).toHaveLength(0);
     expect(tts.spoken).toHaveLength(2);
+    expect(tts.spoken[0]?.text).toBe('front close');
     expect(tts.spoken[1]?.text).toBe('front stop');
   });
 
-  it('does not cancel when escalating from no prior zone', () => {
-    const tts = new FakeTts();
-    const engine = createAlertEngine(defaultCfg(), tts, phrases);
-    engine.ingest(ev('F', 'NEAR', 150), 0);
-    expect(tts.cancelled).toHaveLength(0);
-  });
-
-  it('OFF cancels pending speech for the same direction and never throttles', () => {
+  it('OFF returns null without speaking and resets same-direction throttle bookkeeping', () => {
     const tts = new FakeTts();
     const engine = createAlertEngine(defaultCfg(), tts, phrases);
     engine.ingest(ev('F', 'CLOSE', 400), 0);
     const result = engine.ingest(ev('F', 'OFF', 0), 100);
     expect(result).toBeNull();
-    expect(tts.cancelled).toContain('F');
+    expect(tts.cancelled).toHaveLength(0);
+    expect(tts.spoken).toHaveLength(1);
+    // Throttle for F:CLOSE was reset, so a new F:CLOSE inside the normal
+    // throttle window still speaks.
+    engine.ingest(ev('F', 'CLOSE', 380), 200);
+    expect(tts.spoken).toHaveLength(2);
   });
 
-  it('OFF without prior non-OFF zone does not cancel', () => {
+  it('OFF without a prior non-OFF zone is a no-op', () => {
     const tts = new FakeTts();
     const engine = createAlertEngine(defaultCfg(), tts, phrases);
     engine.ingest(ev('F', 'OFF', 0), 0);
     expect(tts.cancelled).toHaveLength(0);
+    expect(tts.spoken).toHaveLength(0);
   });
 
   it('mute suppresses output but still advances throttle bookkeeping', () => {

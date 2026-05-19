@@ -47,7 +47,10 @@ export function useCane(): CaneController {
     const setBleState = useAppStore.getState().setBleState;
     const ingestAlert = useAppStore.getState().ingestAlert;
 
-    const offState = m.subscribeState(setBleState);
+    const offState = m.subscribeState((state) => {
+      if (state.kind !== 'connected') tts.current?.cancel('*');
+      setBleState(state);
+    });
     const offAlert = m.onAlert((event) => {
       ingestAlert(event);
       eng.ingest(event, Date.now());
@@ -55,6 +58,9 @@ export function useCane(): CaneController {
 
     const unsubSettings = useAppStore.subscribe((state, prev) => {
       if (state.settings !== prev.settings) {
+        if (state.settings.muted && !prev.settings.muted) {
+          tts.current?.cancel('*');
+        }
         eng.configure(settingsToEngineConfig(state.settings));
       }
     });
